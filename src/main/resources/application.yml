@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/key-app
+    username: root
+    password:
+    driver-class-name: org.mariadb.jdbc.Driver
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  
+
+jwt:
+  secret: "y8nP0hpxbI9jk2s+Y3bB8fh1HQhVmPHdrLJgI5VQH0k="
+  expirationMs: 3600000
+
+cors:
+  allowed-origins: "http://localhost:4200"
