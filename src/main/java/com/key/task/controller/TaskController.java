@@ -21,13 +21,13 @@ public class TaskController {
 
     @GetMapping
     public Page<TaskDto> getTasks(
-            @PageableDefault(size = 10, sort = "name", direction = Sort.Direction.ASC) Pageable pageable) {
+            @PageableDefault(size = 10, sort = "label", direction = Sort.Direction.ASC) Pageable pageable) {
         return taskService.getAllTasks(pageable);
     }
 
     @GetMapping("/to-do")
     public Page<TaskDto> getTasksNotCompleted(
-            @PageableDefault(size = 10, sort = "name", direction = Sort.Direction.ASC) Pageable pageable) {
+            @PageableDefault(size = 10, sort = "label", direction = Sort.Direction.ASC) Pageable pageable) {
         return taskService.getAllTasksToDo(pageable);
     }
 
